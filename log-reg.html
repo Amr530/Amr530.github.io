@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Sign up</title>
+    <link rel="stylesheet" href="log-reg-menu.css">
+</head>  
+<body class="body2">
+    <div class="form-box" id="hidden">
+        <form class="form1" action=""> 
+            <span class="title">Sign up</span>
+            <span class="subtitle">Create a free account with your email.</span>
+            <div class="form-container">
+              <input type="text" class="input" placeholder="Full Name" required>
+                    <input type="email" class="input" placeholder="Email" required>
+                    <input  type="password" class="input" id="my-input11" placeholder="Password" required>
+            </div>
+            <button class="button1" onclick="myfunction(),clickCounter()" >Sign up</button>
+            <script>
+              function myfunction(){
+                alert("Done");
+              }
+            </script>
+        </form>
+      <button  id="my-button11">show</button>
+        <script>
+          var myButtom =document.getElementById('my-button11'),
+          myInput =document.getElementById('my-input11');
+          myButtom.onclick=function () {
+            'use strict';
+            if(this.textContent === 'show'){
+            myInput.setAttribute('type','text');
+          this.textContent='hide';}
+          else{
+            myInput.setAttribute('type','password');
+            this.textContent='show';
+          }
+          };
+        </script>
+        <script>
+        function clickCounter() {
+          if (typeof(Storage) !== "undefined") {
+            if (sessionStorage.clickcount) {
+              sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+            } else {
+              sessionStorage.clickcount = 1;
+            }
+            document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+          } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+          }
+        }
+        </script>
+        <div class="form-section">
+          <p onclick="document.getElementById('hidden').style.display='none';
+            document.getElementById('hidden1').style.display='block';
+            document.getElementById('title').innerHTML='Sign in'">Have an account?     <span id="Log"> Log in</span> </p>
+        </div>
+        </div>  
+        <section class="container" id="hidden1" style="display: none;">
+          <header>Registration Form</header>
+          <form class="form2">
+              <div class="input-box">
+                  <label>Full Name</label>
+                  <input required="" placeholder="Enter full name" type="text">
+              </div>
+              <div class="column">
+                  <div class="input-box">
+                    <label>Phone Number</label>
+                    <input required="" placeholder="Enter phone number" type="telephone">
+                  </div>
+                  <div class="input-box">
+                    <label>Birth Date</label>
+                    <input required="" placeholder="Enter birth date" type="date">
+                  </div>
+              </div>
+              <div class="gender-box">
+                <label>Gender</label>
+                <div class="gender-option">
+                  <div class="gender">
+                    <input checked="" name="gender" id="check-male" type="radio">
+                    <label for="check-male">Male</label>
+                  </div>
+                  <div class="gender">
+                    <input name="gender" id="check-female" type="radio">
+                    <label for="check-female">Female</label>
+                  </div>
+                  <div class="gender">
+                    <input name="gender" id="check-other" type="radio">
+                    <label for="check-other">Prefer not to say</label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-box address">
+                <label>Address</label>
+                <input required="" placeholder="Enter street address" type="text">
+                <div class="column">
+                  <div class="select-box">
+                    <select>
+                      <option hidden="">Country</option>
+                      <option>USA</option>
+                      <option>UK</option>
+                      <option>Germany</option>
+                      <option>France</option>
+                      <option>England</option>
+                      <option>Spain</option>
+                      <option>Japan</option>
+                      <option>Egypt</option>
+                      <option>Tunisia</option>
+                      <option>Morocco</option>
+                      <option>Algeria</option>
+                    </select>
+                  </div>
+                <input placeholder="Enter your city" type="text">
+                </div>
+              </div>
+              <button class="button2" type="submit" onclick="myfunction()">Submit</button>
+              <p class="margin">Do you have an account?  <a class="Sign" href="log-reg.html">Sign up </a> </p>
+            <script>
+              function myfunction(){
+                alert("Done");
+              }
+            </script>
+          </form>
+        </section>
+</body>
+</html>
